@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360">
+  <!-- transparent background -->
+
+  <!-- Udemy mark (same geometry, different color) -->
+  <path d="M208 259
+           C165 229 145 200 148 161
+           C152 111 206 88 242 111
+           C264 125 266 148 250 162
+           C233 177 210 167 211 150
+           C212 136 229 131 241 140
+           C279 170 318 187 355 183
+           C391 179 417 156 426 127
+           C443 79 401 35 346 38
+           C292 41 263 76 250 107
+           L226 96
+           C246 45 293 14 358 18
+           C454 25 508 112 476 203
+           C448 283 364 310 288 287
+           C249 276 214 253 188 225
+           L176 252
+           C210 294 263 324 320 333
+           C334 335 339 348 336 359
+           C332 371 320 377 307 374
+           C244 361 198 326 208 259 Z"
+        fill="#E3002B"/>
+
+  <!-- Wordmark (same size / weight as Udemy) -->
+  <text x="520" y="275"
+        font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+        font-size="260"
+        font-weight="800"
+        fill="#1C1D1F"
+        letter-spacing="-6">
+    Ydemy
+  </text>
+</svg>
