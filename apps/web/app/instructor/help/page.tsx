@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Q&A</h1>;
+  return <h1>リソース</h1>;
 }
