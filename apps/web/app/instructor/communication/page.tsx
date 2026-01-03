@@ -1,6 +1,6 @@
 import { Path } from "@/lib/constants/path";
 import { redirect } from "next/navigation";
 
-export default function Communication() {
+export default function Page() {
   redirect(Path.instructor.qa);
 }
