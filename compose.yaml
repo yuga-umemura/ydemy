@@ -1,0 +1,75 @@
+services:
+  db:
+    image: public.ecr.aws/docker/library/mysql:8.3
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: ydemys
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      TZ: Asia/Tokyo
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_0900_ai_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  opensearch:
+    image: public.ecr.aws/opensearchproject/opensearch:3
+    ports:
+      - 9200:9200
+      - 9600:9600
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=R9m!aQ2#Z
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
+
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: user
+      MINIO_ROOT_PASSWORD: password
+      MINIO_SERVER_URL: http://localhost:9000
+      MINIO_BROWSER_REDIRECT_URL: http://localhost:9001
+      TZ: Asia/Tokyo
+    ports:
+      - "9000:9000" # S3互換API
+      - "9001:9001" # コンソール
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -f http://127.0.0.1:9000/minio/health/live >/dev/null 2>&1",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  mc:
+    image: minio/mc:latest
+    depends_on:
+      minio:
+        condition: service_healthy
+    environment:
+      MINIO_ROOT_USER: user
+      MINIO_ROOT_PASSWORD: password
+      MINIO_BUCKET: app-bucket
+      WEB_ORIGIN: http://localhost:3000
+      APP_MINIO_ACCESS_KEY: appminio
+      APP_MINIO_SECRET_KEY: appminiopass
+    volumes:
+      - ./docker/minio/init:/init:ro
+    entrypoint: ["/init/init.sh"]
+
+volumes:
+  mysql_data:
+  minio_data:
+  opensearch_data:
