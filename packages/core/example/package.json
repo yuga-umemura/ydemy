@@ -1,0 +1,11 @@
+{
+  "name": "@core/example",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {},
+  "packageManager": "pnpm@10.26.2",
+  "dependencies": {},
+  "devDependencies": {}
+}

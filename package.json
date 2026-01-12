@@ -1,7 +1,10 @@
 {
   "name": "ydemy",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "api:dev": "pnpm --filter @ydemy/api dev",
+    "gen:proto": "pnpm --filter @ydemy/protobuf generate"
+  },
   "packageManager": "pnpm@10.26.2",
   "devDependencies": {
     "@types/node": "^25.0.3",

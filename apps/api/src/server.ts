@@ -1,11 +1,13 @@
 import { Server, ServerCredentials } from "@grpc/grpc-js";
+import { GreeterService } from "../../../packages/protobuf/generated/hello";
+import { sayHello } from "../../../packages/core/example/src/sayHello";
 
 const port = process.env.PORT ?? 50051;
 
 function getServer() {
   const server = new Server();
 
-  // server.addService()
+  server.addService(GreeterService, { sayHello });
 
   return server;
 }
