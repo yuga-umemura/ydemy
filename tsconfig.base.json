@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/protobuf/*": ["packages/protobuf/*"],
+      "@/core/*": ["packages/core/*"],
+      "@/db/*": ["packages/db/*"],
+      "@/lib/*": ["packages/lib/*"]
+    }
+  }
+}

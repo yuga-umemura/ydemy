@@ -1,4 +1,4 @@
-import { GreeterServer, HelloReply } from "../../../protobuf/generated/hello";
+import { GreeterServer, HelloReply } from "@/protobuf/generated/hello";
 
 export const sayHello: GreeterServer["sayHello"] = (call, callback) => {
   const name = call.request.name || "world";
