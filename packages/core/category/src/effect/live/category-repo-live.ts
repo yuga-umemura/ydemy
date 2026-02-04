@@ -1,7 +1,7 @@
 import { Prisma } from "@ydemy/db";
 import { InternalError } from "@ydemy/lib/error";
 import { Effect, Layer } from "effect";
-import { CategoryRepo } from "../../effect/context/category-repo";
+import { CategoryRepo } from "../context/category-repo";
 import { transform } from "@ydemy/lib/transform";
 import { Categories } from "../../domain/category/data/category";
 
