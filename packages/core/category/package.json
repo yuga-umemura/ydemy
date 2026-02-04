@@ -1,0 +1,19 @@
+{
+  "name": "@core/category",
+  "version": "1.0.0",
+  "exports": {
+    "./data/category": "./src/domain/category/data/*.ts",
+    "./respository/*": "./src/interface-adapter/*-repository/index.ts",
+    "./usecase/*": "./src/application/*UseCase.ts",
+    "./interface/*": "./src/application/interface/index.ts"
+  },
+  "scripts": {},
+  "packageManager": "pnpm@10.26.2",
+  "dependencies": {
+    "@ydemy/db": "workspace:*",
+    "@ydemy/lib": "workspace:*"
+  },
+  "devDependencies": {
+    "@config/typescript": "workspace:*"
+  }
+}

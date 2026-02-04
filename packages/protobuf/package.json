@@ -2,7 +2,11 @@
   "name": "@ydemy/protobuf",
   "version": "1.0.0",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./*": "./generated/*.ts",
+    "./model/*": "./generated/model/*.ts",
+    "./google/*": "./generated/google/*.ts",
+    "./google/protobuf/*": "./generated/google/protobuf/*.ts"
   },
   "scripts": {
     "generate": "./scripts/gen-proto.sh"
@@ -16,6 +20,7 @@
     "grpc-health-check": "^2.1.0"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
     "grpc-tools": "^1.13.1",
     "ts-proto": "^2.10.1"
   }
