@@ -3,11 +3,10 @@
 import "./style.scss";
 
 import clsx from "clsx";
-import Logo from "../Link/Logo";
-import HeartButton from "../Button/Heart";
-import UserMenu from "../Menu/User";
+import Logo from "../../shared/Logo";
+import UserMenu from "../UserMenu";
 import { Button, MenuTrigger, Popover } from "react-aria-components";
-import UserIcon from "../Icon/Circled/User";
+import UserIcon from "../../shared/CircledUserIcon";
 import { Asset } from "@/lib/constants/asset";
 
 export default function Header() {
@@ -16,8 +15,6 @@ export default function Header() {
       <div className={clsx("header__outer")}>
         <div className={clsx("header__inner")}>
           <Logo />
-
-          {/* <HeartButton /> */}
 
           <MenuTrigger>
             <Button className={clsx("header__user-menu-button outline-none")}>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../globals.scss";
-import { RootTemplate } from "../ui/templates/root";
+import Header from "../ui/widgets/Header";
 
 export const metadata: Metadata = {
   title: "オンラインコース - いろんなことを、あなたのペースで | Ydemy",
@@ -15,9 +15,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <RootTemplate>
-          <main>{children}</main>
-        </RootTemplate>
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
