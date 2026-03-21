@@ -10,7 +10,7 @@
   "scripts": {},
   "packageManager": "pnpm@10.26.2",
   "dependencies": {
-    "@ydemy/db": "workspace:*",
+    "@ydemy/database": "workspace:*",
     "@ydemy/lib": "workspace:*"
   },
   "devDependencies": {
