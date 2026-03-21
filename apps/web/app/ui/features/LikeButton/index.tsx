@@ -4,7 +4,7 @@ import { Asset } from "@/lib/constants/asset";
 import Image from "next/image";
 import { Button } from "react-aria-components";
 
-export default function HeartButton() {
+export default function LikeButton() {
   return (
     <div>
       <Button>

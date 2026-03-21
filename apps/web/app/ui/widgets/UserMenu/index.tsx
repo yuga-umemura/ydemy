@@ -5,7 +5,7 @@ import "./style.scss";
 import { Menu, MenuItem, MenuSection } from "react-aria-components";
 import { UserMenuProps } from "./type";
 import clsx from "clsx";
-import UserIcon from "../../Icon/Circled/User";
+import UserIcon from "../../shared/CircledUserIcon";
 import { Asset } from "@/lib/constants/asset";
 
 export default function UserMenu({ ...props }: UserMenuProps) {
