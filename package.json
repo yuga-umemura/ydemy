@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "api:dev": "pnpm --filter @ydemy/api dev",
-    "prisma:migrate:dev": "pnpm --filter @ydemy/db migrate:dev",
+    "prisma:migrate:dev": "pnpm --filter @ydemy/database migrate:dev",
+    "prisma:seed": "pnpm --filter @ydemy/database seed",
     "gen:proto": "pnpm --filter @ydemy/protobuf generate"
   },
   "packageManager": "pnpm@10.26.2",
@@ -12,7 +13,5 @@
     "eslint": "^9.39.2",
     "typescript": "^5.9.3"
   },
-  "dependencies": {
-    "effect": "^3.19.14"
-  }
+  "dependencies": {}
 }
