@@ -2,7 +2,10 @@
   "name": "ydemy",
   "version": "1.0.0",
   "scripts": {
-    "api:dev": "pnpm --filter @ydemy/api dev",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turob run test",
     "prisma:migrate:dev": "pnpm --filter @ydemy/database migrate:dev",
     "prisma:seed": "pnpm --filter @ydemy/database seed",
     "gen:proto": "pnpm --filter @ydemy/protobuf generate"
@@ -11,7 +14,7 @@
   "devDependencies": {
     "@types/node": "^25.0.3",
     "eslint": "^9.39.2",
+    "turbo": "^2.8.20",
     "typescript": "^5.9.3"
-  },
-  "dependencies": {}
+  }
 }
