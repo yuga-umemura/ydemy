@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package ydemy.query;
+
+import "google/protobuf/empty.proto";
+import "model/category.proto";
+
+
+service CategoryQuery {
+  rpc List(google.protobuf.Empty)
+    returns (ydemy.model.Categories);
+}

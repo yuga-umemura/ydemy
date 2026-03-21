@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ydemy.model;
+
+message Category {
+  string id = 1;
+
+  string name = 2;
+
+  string slug = 3;
+
+  bool is_active = 4;
+
+  int32 sort_order = 5;
+
+  string parent_id = 6;
+}
+
+message Categories {
+  repeated Category categories = 1;
+}
